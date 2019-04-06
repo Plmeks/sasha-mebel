@@ -1,5 +1,5 @@
 {
     "watch": ["server"],
-    "ext": "ts",
-    "exec": "tsc && node build/index.js"
+    "ext": "ts, html",
+    "exec": "gulp && node build/index.js"
   }
