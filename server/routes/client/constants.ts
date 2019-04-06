@@ -1,6 +1,7 @@
 enum HomeRoutes {
-    Index = 'home/index',
-    Contacts = 'home/about'
+    Index = 'pages/home/index',
+    About = 'pages/home/about',
+    Contacts = 'pages/home/contacts'
 };
 
 export { HomeRoutes };

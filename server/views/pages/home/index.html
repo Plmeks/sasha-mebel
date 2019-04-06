@@ -1,0 +1,25 @@
+<% layout('../../layouts/base') %>
+<% block('title', 'Index') %>
+
+<div id="vue-home" v-bind:class="homeClass">
+    <!-- <h3>{{ getText() }}</h3> -->
+    <ul>
+        <% posts.forEach((post) => {%>
+            <li>
+                <%= post.text %>
+            </li>
+        <% }) %>
+    </ul>
+    <input type="text" v-model="name" v-bind:value="name">
+    <h3>My year is: {{year}}</h3>
+    <button v-on:click="year++">Add one year</button>
+    <button v-on:click="year--">Minus one year</button>
+    <a href="http://google.com" v-on:click.prevent="function() {alert('click')}">Prevent</a>
+    <h3>Posts client:</h3>
+    <ul>
+        <li v-for="post in posts">
+            {{post.text}}
+        </li>
+    </ul>
+    <p class="error" style="color: red;"><%= error %></p>
+</div>
