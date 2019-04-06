@@ -2,7 +2,7 @@
 <% block('title', 'Index') %>
 
 <div id="vue-home" v-bind:class="homeClass">
-    <!-- <h3>{{ getText() }}</h3> -->
+    <h3>{{ getText() }}</h3>
     <ul>
         <% posts.forEach((post) => {%>
             <li>
@@ -10,7 +10,8 @@
             </li>
         <% }) %>
     </ul>
-    <input type="text" v-model="name" v-bind:value="name">
+    <input type="text" v-model="name" />
+    <h3>My name is: {{name}}</h3>
     <h3>My year is: {{year}}</h3>
     <button v-on:click="year++">Add one year</button>
     <button v-on:click="year--">Minus one year</button>
@@ -21,5 +22,6 @@
             {{post.text}}
         </li>
     </ul>
+    <todo-item></todo-item>
     <p class="error" style="color: red;"><%= error %></p>
 </div>

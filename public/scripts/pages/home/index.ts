@@ -1,7 +1,6 @@
 import { HomeServices } from './services';
-// import Vue from 'vue';
+import Vue from 'vue';
 
-// @ts-ignore
 new Vue({
     el: '#vue-home',
     data: {
@@ -21,7 +20,6 @@ new Vue({
     }
 });
 
-// @ts-ignore
-// Vue.component('todo-item', {
-//     template: '<li>Это одна задача в списке</li>'
-// });
+Vue.component('todo-item', {
+    template: '<li>Это одна задача в списке</li>'
+});
