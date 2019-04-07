@@ -1,5 +1,5 @@
 {
-    "watch": ["server", "public"],
+    "watch": ["server", "public", "client"],
     "ext": "ts, html, js, scss",
     "exec": "gulp && webpack && node build/index.js"
   }

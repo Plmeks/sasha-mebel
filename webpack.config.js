@@ -1,13 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './public/scripts/pages/home/index.ts',
-  mode: 'production',
+  entry: './client/layouts/base.ts',
+  mode: 'development',
   module: {
     rules: [{
       test: /\.tsx?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
+      loader: 'ts-loader',
+      exclude: [/node_modules/],
+      options: {
+        configFile: "tsconfig.client.json"
+      }
     }]
   },
   resolve: {
@@ -18,6 +21,13 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build/public/scripts/'),
-    filename: 'bundle.js',
+    publicPath: '/scripts/', // чтобы находить чанки
+    chunkFilename: 'chunks/[name].js',
+    filename: 'bundle.js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 };

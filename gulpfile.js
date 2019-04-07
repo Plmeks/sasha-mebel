@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const sassCompiler = require('node-sass');
 const cleanCss = require('gulp-clean-css');
 const concatCss = require('gulp-concat-css');
-const tsProject = ts.createProject('tsconfig.json');
+const tsProject = ts.createProject('tsconfig.server.json');
 sass.compiler = sassCompiler;
 
 function cleanBuild() {
