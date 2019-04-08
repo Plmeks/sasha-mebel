@@ -1,14 +1,15 @@
-import { Controller } from '../../common/Controller';
+import { Controller } from '../../../common/Controller';
 import { HomeServices } from './services';
 import Vue from 'vue';
 
 const routes = [
     '/',
     '/home',
-    '/index'
+    '/index',
+    '/home/index'
 ];
 
-class HomeController extends Controller {
+class HomeIndexPageController extends Controller {
     constructor() {
         super();
         console.log('home');
@@ -48,5 +49,5 @@ class HomeController extends Controller {
     }
 }
 
-export default HomeController;
+export default HomeIndexPageController;
 export { routes };

@@ -1,10 +1,11 @@
-import { Controller } from '../../common/Controller';
+import { Controller } from '../../../common/Controller';
 
 const routes = [
-    '/about'
+    '/about',
+    '/home/about',
 ];
 
-class AboutController extends Controller {
+class HomeAboutPageController extends Controller {
     constructor() {
         super();
         console.log('about');
@@ -14,5 +15,5 @@ class AboutController extends Controller {
     }
 }
 
-export default AboutController;
+export default HomeAboutPageController;
 export { routes };

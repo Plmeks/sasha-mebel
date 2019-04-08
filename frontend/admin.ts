@@ -1,11 +1,14 @@
-import { Helpers } from '../common/Helpers';
+import { Helpers } from './common/Helpers';
+import { AdminLayoutController } from './layouts/admin/controller';
 
 const controllerModules = [
-    import(/* webpackChunkName: "home" */ '../pages/home/controller'),
-    import(/* webpackChunkName: "about" */ '../pages/about/controller')
+    import(/* webpackChunkName: "admin~index" */ './pages/admin/index/controller')
 ];
 
 (() => {
+    const layoutController = new AdminLayoutController();
+    layoutController.initialize();
+
     controllerModules.forEach(async (module) => {
         const controllerModule = await module;
 

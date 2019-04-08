@@ -3,7 +3,7 @@ class Helpers {
         const pathname = window.location.pathname;
 
         for(let i = 0; i < routes.length; i++) {
-            if (routes[i] === pathname) {
+            if (routes[i] === pathname || routes[i] + '/' === pathname) {
                 return true;
             }
         }

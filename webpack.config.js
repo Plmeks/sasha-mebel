@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/layouts/base.ts',
+  entry: {
+    home: './frontend/home.ts',
+    admin: './frontend/admin.ts',
+  },
   mode: 'development',
   module: {
     rules: [{
@@ -23,7 +26,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build/public/scripts/'),
     publicPath: '/scripts/', // чтобы находить чанки
     chunkFilename: 'chunks/[name].js',
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   optimization: {
     splitChunks: {

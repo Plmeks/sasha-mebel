@@ -4,4 +4,8 @@ enum HomeRoutes {
     Contacts = 'pages/home/contacts'
 };
 
-export { HomeRoutes };
+enum AdminRoutes {
+    Index = 'pages/admin/index',
+};
+
+export { HomeRoutes, AdminRoutes };

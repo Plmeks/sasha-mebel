@@ -1,6 +1,6 @@
 import express from 'express';
-import { PostsModel } from '../../models/posts';
-import { HomeRoutes } from '../../routes/client/constants';
+import { PostsModel } from '../models/posts';
+import { HomeRoutes } from '../routes/client/constants';
 
 class HomeController {
     postsModel: PostsModel;
@@ -22,7 +22,7 @@ class HomeController {
         res.render(HomeRoutes.Index, {posts, error});
     }
 
-    about = (req: express.Request, res: express.Response) => {
+    about = (_req: express.Request, res: express.Response) => {
         res.render(HomeRoutes.About);
     }
 
