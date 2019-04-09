@@ -1,5 +1,5 @@
-import { Controller } from '../../../common/Controller';
-import { HomeServices } from './services';
+import { Controller } from '../../common/Controller';
+import { PostsModel } from '../models/posts';
 import Vue from 'vue';
 
 const routes = [
@@ -37,7 +37,7 @@ class HomeIndexPageController extends Controller {
                 posts: []
             },
             created: async function() {
-                const homeServices = new HomeServices();
+                const homeServices = new PostsModel();
                 this.posts = await homeServices.getPosts();
             },
             methods: {

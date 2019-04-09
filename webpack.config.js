@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    home: './frontend/home.ts',
-    admin: './frontend/admin.ts',
+    home: './frontend/app.ts'
   },
   mode: 'development',
   module: {

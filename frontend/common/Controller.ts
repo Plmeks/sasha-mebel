@@ -1,5 +1,5 @@
 class Controller {
-    launch() {
+    constructor() {
         this.initialize();
     }
 

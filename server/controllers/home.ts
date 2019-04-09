@@ -1,6 +1,6 @@
 import express from 'express';
 import { PostsModel } from '../models/posts';
-import { HomeRoutes } from '../routes/client/constants';
+import { HomeRoutes, HomeViews } from '../routes/constants';
 
 class HomeController {
     postsModel: PostsModel;
@@ -10,7 +10,7 @@ class HomeController {
     }
 
     index = async (_req: express.Request, res: express.Response) => {
-        let posts = [];
+        let posts: any[] = [];
         let error = '';
 
         try {
@@ -19,19 +19,15 @@ class HomeController {
             error = err;
         }
 
-        res.render(HomeRoutes.Index, {posts, error});
+        res.render(HomeViews.Index, {posts, error});
     }
 
     about = (_req: express.Request, res: express.Response) => {
-        res.render(HomeRoutes.About);
+        res.render(HomeViews.About);
     }
 
     getPostsList = async () => {
-        const postsResponse = await new PostsModel().getPosts();
-
-        if (postsResponse.status == 200) {
-            return postsResponse.data;
-        }
+        return await new PostsModel().getPosts();
     }
 }
 

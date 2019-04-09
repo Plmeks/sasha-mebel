@@ -1,4 +1,4 @@
-import { Controller } from '../../../common/Controller';
+import { Controller } from '../../common/Controller';
 
 const routes = [
     '/about',

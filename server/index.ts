@@ -2,9 +2,8 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 
-import { router as postsRouter } from './routes/api/posts';
-import { router as homeRouter } from './routes/client/home';
-import { router as adminRouter } from './routes/client/admin';
+import { router as postsRouter } from './routes/api';
+import { router as homeRouter } from './routes/home';
 
 const app: express.Application = express();
 const port = process.env.PORT || 5000;
@@ -20,8 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routers
-app.use('/api/posts', postsRouter);
-app.use('/admin', adminRouter);
+app.use('/api', postsRouter);
 app.use(['/home', '/'], homeRouter);
 
 app.listen(port, () => {

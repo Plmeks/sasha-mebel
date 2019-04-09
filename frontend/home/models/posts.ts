@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class HomeServices {
+class PostsModel {
     uri = 'http://localhost:5000/api/posts/';
 
     getPosts = async () => {
@@ -13,4 +13,4 @@ class HomeServices {
         return [];
     }
 }
-export { HomeServices };
+export { PostsModel };
